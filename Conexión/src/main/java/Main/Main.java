@@ -1,9 +1,9 @@
+// Armando Castro, Stephanie Sandoval | Mar 12. 24
+// Tarea Programada 01 | Base de Datos I
+
 /* Driver class of the project
  * Used to test the code
  */
-
-// Armando Castro, Stephanie Sandoval
-// Mar 09. 24
 
 package Main;
 

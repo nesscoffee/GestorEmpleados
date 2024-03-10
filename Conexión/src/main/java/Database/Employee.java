@@ -1,9 +1,9 @@
+// Armando Castro, Stephanie Sandoval | Mar 12. 24
+// Tarea Programada 01 | Base de Datos I
+
 /* Class to store information related to an Employee
  * Stores the name and the salary
  */
-
-// Armando Castro, Stephanie Sandoval
-// Mar 09. 24
 
 package Database;
 

@@ -1,10 +1,10 @@
+// Armando Castro, Stephanie Sandoval | Mar 12. 24
+// Tarea Programada 01 | Base de Datos I
+
 /* Class to connect with the database
  * Allows writing and reading operations
  * Works with singleton pattern
  */
-
-// Armando Castro, Stephanie Sandoval
-// Mar 09. 24
 
 package Database;
 
