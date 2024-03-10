@@ -49,7 +49,7 @@ public class EmployeeRepository {
             connection = DriverManager.getConnection(connectionString);
 
             // prepare call for the stored procedure
-            String insertSPCall = "{CALL dbo.InsertarEmpleado (?, ?, ?)}";
+            String insertSPCall = "{CALL dbo.InsertEmployee (?, ?, ?)}";
             callableStatement = connection.prepareCall(insertSPCall);
 
             // prepare the input parameters
@@ -89,7 +89,7 @@ public class EmployeeRepository {
             connection = DriverManager.getConnection(connectionString);
 
             // prepare call for the stored procedure
-            String storedProcedureCall = "{CALL dbo.ListarEmpleado}";
+            String storedProcedureCall = "{CALL dbo.ListEmployee}";
             callableStatement = connection.prepareCall(storedProcedureCall);
 
             // execute the stored procedure and get result
