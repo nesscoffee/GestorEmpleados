@@ -1,4 +1,7 @@
--- Insertar los primeros 40 empleados en la tabla
+-- Armando Castro, Stephanie Sandoval | Mar 12. 24
+-- Tarea Programada 01 | Base de Datos I
+
+-- Insert the first 40 values in the data base
 
 USE PrograDB;
 
@@ -44,7 +47,5 @@ INSERT INTO dbo.Empleado (Nombre, Salario) VALUES
 ('Isabella Martinez', 55000),
 ('Sebastian Perez', 62000);
 
-
--- Para visualizar la tabla:
-
+-- to visualize the table:
 SELECT * FROM dbo.Empleado;

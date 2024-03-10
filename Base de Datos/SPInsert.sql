@@ -1,17 +1,22 @@
--- Inserta nuevos datos en la tabla Empleado
--- Valida que el nombre del empleado no exista
+-- Armando Castro, Stephanie Sandoval | Mar 12. 24
+-- Tarea Programada 01 | Base de Datos I
 
--- Descripcion de parametros:
--- @outResultCode: codigo de resultado de ejecucion
--- -- si el codigo es 0, el codigo corrio sin errores
--- -- si el codigo de error esta entre 0 y 50000 son errores reservados
--- -- si el codigo es mayor a 50000, fue definido por el programador
+-- Stored Procedure:
+-- Inserts new values into the table: Empleado
+-- Verifies there are no duplicates
 
--- Ejemplo de ejecucion del SP:
+-- Parameter's description:
+-- @outResultCode: execution result code
+-- -- if the code is 0, the code ran without problems
+-- -- if the code is between 0 and 50000, it's a reserved error
+-- -- if the code is greater than 50000, it was defined by the programmer
+
+-- Execution example:
+-- -- USE PrograDB
 -- -- DECLARE @utResultCode INT
 -- -- EXECUTE [dbo].[InsertarEmpleado] 'Nombre', 1000, @outResultCode OUTPUT
 
-CREATE PROCEDURE dbo.InsertarEmpleado
+CREATE PROCEDURE dbo.InsertEmployee
 	@inNombre VARCHAR(128)
 	, @inSalario MONEY
 	, @outResultCode INT OUTPUT
@@ -21,22 +26,20 @@ BEGIN
 	SET NOCOUNT ON;
 	BEGIN TRY
 
-	-- inicializacion de variables:
+	-- variable inicialization:
 	SET @outResultCode = 0;
 
-	-- validaciones:
-
-	-- validar si ya existe un nombre igual al de entrada:
+	-- check for duplicates:
 	IF EXISTS (SELECT 1 FROM [dbo].[Empleado] E WHERE E.Nombre = @inNombre)
 	BEGIN
-		-- nombre de empleado ya existe:
+		-- the employee's name already exists:
 		SET @outResultCode = 50010;
 	END;
 
-	-- si el nombre no esta en la base de datos:
+	-- if the name is not registered:
 	IF (@outResultCode = 0)
 	BEGIN
-		-- agregar el nombre a la tabla:
+		-- add name to the table:
 		INSERT dbo.Empleado (Nombre, Salario)
 		VALUES (@inNombre, @inSalario)
 	END;
@@ -56,7 +59,7 @@ BEGIN
 			GETDATE()
 		);
 
-		-- error en el catch:
+		-- catch error:
 		SET @outResultCode = 50005;
 
 	END CATCH;

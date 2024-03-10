@@ -1,12 +1,21 @@
--- Lista todos los empleados en orden alfabetico ascendente
--- Ordena segun apellido
--- Para ordenar segun nombre se debe quitar el comentario despues del select y comentar la siguiente
--- Muestra todos los atributos excepto la PK
+-- Armando Castro, Stephanie Sandoval | Mar 12. 24
+-- Tarea Programada 01 | Base de Datos I
 
--- Ejemplo de ejecucion del SP:
--- -- EXECUTE dbo.ListarEmpleado
+-- Stored Procedure:
+-- Creates list with all the employees in the db
+-- Sorts alphabetically according to the last name
+-- Doesn't show the PK value
 
-CREATE PROCEDURE dbo.ListarEmpleado
+-- Note:
+-- To sort alphabetically according to name, remove comment
+-- from the line following the SELECT statement and
+-- comment the next line.
+
+-- Execution example:
+-- -- USE PrograDB
+-- -- EXECUTE dbo.ListEmployee
+
+CREATE PROCEDURE dbo.ListEmployee
 AS
 BEGIN
 	SET NOCOUNT ON;

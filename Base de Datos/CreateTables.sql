@@ -1,17 +1,18 @@
--- Query de las tablas y SPs
--- Armando Castro, Stephanie Sandoval
+-- Armando Castro, Stephanie Sandoval | Mar 12. 24
+-- Tarea Programada 01 | Base de Datos I
+
+-- Create the two tables of the database
 
 USE PrograDB;
 
--- Crear la tabla de empleados
-
+-- Create the employee table:
 CREATE TABLE dbo.Empleado (
     ID INT IDENTITY(1,1) PRIMARY KEY,
     Nombre VARCHAR(128) NOT NULL,
     Salario MONEY NOT NULL
 );
 
--- Crear la tabla de errores
+-- Create the error table:
 SET ANSI_NULLS ON;
 SET QUOTED_IDENTIFIER ON;
 
